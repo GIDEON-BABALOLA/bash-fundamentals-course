@@ -46,6 +46,7 @@ done
 
 SUM=0
 for i in $@; do
- SUM=$(($SUM+$i))
+ SUM=$(($SUM+$i)) # This will sum uo the numbers
+#  SUM=$SUM+$i # This will show 1 + 2 + 3 + 4 + 5 if the arguments are 0 1 2 3 4 5
 done
 echo $SUM
