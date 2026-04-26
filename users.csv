@@ -1,0 +1,16 @@
+id,name,email,age,country,role,signup_date,last_login,status
+1,Alice Jansen,alice.jansen@example.com,28,NL,user,2023-01-14,2025-03-10,active
+2,Bob de Vries,bob.devries@example.com,35,NL,admin,2022-11-03,2025-03-14,active
+3,Charlie Smith,charlie.smith@example.com,22,UK,user,2024-02-20,2025-02-28,active
+4,Diana Müller,diana.mueller@example.de,41,DE,manager,2021-07-19,2025-01-05,inactive
+5,Erik van Dijk,erik.vandijk@example.com,31,US,user,2023-06-02,2025-03-12,active
+6,Francesco Rossi,francesco.rossi@example.it,29,IT,user,2024-01-08,2025-03-01,active
+7,Greta Svensson,greta.svensson@example.se,46,US,admin,2020-09-30,2024-12-15,inactive
+8,Hans Becker,hans.becker@example.de,54,DE,user,2019-04-11,2025-02-10,active
+9,Irene Dubois,irene.dubois@example.fr,27,FR,user,2024-08-05,2025-03-13,active
+10,Jan Kowalski,jan.kowalski@example.pl,38,PL,manager,2022-03-27,2025-02-22,active
+11,Karl Novak,karl.novak@example.cz,24,CZ,user,2024-11-01,2025-03-14,active
+12,Laura García,laura.garcia@example.es,33,ES,user,2023-09-16,2025-03-07,active
+13,Marco Bianchi,marco.bianchi@example.it,45,IT,admin,2021-05-09,2025-01-20,active
+14,Nina Olsen,nina.olsen@example.no,26,NO,user,2024-04-18,2025-03-11,active
+15,Oscar Petrov,oscar.petrov@example.bg,52,BG,user,2018-12-02,2024-11-30,inactive

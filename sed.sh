@@ -1,5 +1,5 @@
 # sed
-# Text transformations
+# Insane Text transformations
 # Basic syntax
 # sed 's/pattern/replacement/flags' file Search and Replace
 # sed '/pattern/d' file Delete lines
@@ -29,10 +29,38 @@ cat .env.example | grep { | gsed '/{{USERNAME}}/aLAST_NAME={{LAST_NAME}}'
 # i sed flag: case insensitive
 # -i command flag to actually change file
 # -i<postfix> to change to new file with postfix
- 
+
+ # This changes USERNAME={{USERNAME}} to mbv={{mbv}}
 cat .env.example | grep { | sed 's/USERNAME/mbv/g'
-# This changes USERNAME={{USERNAME}} to mbv={{mbv}}
-cat .env.example | grep { | sed 's/USERNAME/mbv/1'
+
 # This changes USERNAME={{USERNAME}} to mbv={{USERNAME}}
-cat .env.example | grep { | sed 's/USERNAME/mbv/2'
+cat .env.example | grep { | sed 's/USERNAME/mbv/1'
+
 # This changes USERNAME={{USERNAME}} to USERNAME={{mbv}}
+cat .env.example | grep { | sed 's/USERNAME/mbv/2'
+
+# This changes USERNAME={{USERNAME}} to mbv={{USERNAME}}, it is case sensitive and only changes the first occurence
+cat .env.example | grep { | sed 's/username/mbv/i'
+
+# This changes USERNAME={{USERNAME}} to mbv={{mbv}}, it is case sensitive and changes the first and second occurence because of ig
+cat .env.example | grep { | sed 's/username/mbv/ig'
+
+# This changes USERNAME={{USERNAME}} to mbv={{USERNAME}}, it is case sensitive and changes the first occurence because of i1   
+cat .env.example | grep { | sed 's/username/mbv/i1'
+
+# This changes USERNAME={{USERNAME}} to USERNAME={{mbv}}, it is case sensitive and changes the second occurence because of i2
+cat .env.example | grep { | sed 's/username/mbv/i2'
+
+# -i is a command flag, it will actually change the file
+gsed -i 's/username/mbv/ig' .env.example
+
+# Let's change it back to the original value
+gsed -i 's/mbv/USERNAME/ig' .env.example
+
+# # What we can also do is add a postfix
+gsed -i.bak 's/username/mbv/ig' .env.example
+
+cat .env.example
+
+# Conclusion
+# Powerful transformations, but less powerful than awk
