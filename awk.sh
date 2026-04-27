@@ -17,7 +17,9 @@ ls -la | awk '{print $9}' # The last one nine is the last name
 # Also ls -la shows all hidden files
 
 # Conditionals and built-in variables
-ls -la | awk '$NF == ".env" {print "dotenv present"}' #NF here means name of file
+
+
+
 ls -la | awk '$NF == ".config" {print "config present"}' #NF here means name of file
 # NR Line number, $0 All columns
 awk 'NR>1 {print $0}' users.csv # This ignores the first line in users.csv and starts printing from the second line

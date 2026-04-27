@@ -1,8 +1,8 @@
 #!/bin/bash
 
 function config() {
-  read -p "Do you want to override the .env file? y/n: " ACTION
-  if [ "$ACTION" = "y" ]
+read -p "Do you want to override the .env file? y/n: " ACTION
+if [ "$ACTION" = "y" ]
    then
     echo "you chose yes"
     read -p "What is your email? " EMAIL
@@ -20,8 +20,8 @@ function config() {
             echo "Automatically tagged the API_VERSION TO VERSION $INITIAL_VERSION"
             # exit
        else
-            OLD_API_VERSION_LINE=$(awk -F= '$1 == "API_VERSION" {print $2}' .env)
-            OLD_API_VERSION=$(echo "$OLD_API_VERSION_LINE" | sed 's/[{}]//g')
+            OLD_API_VERSION_VALUE=$(awk -F= '$1 == "API_VERSION" {print $2}' .env)
+            OLD_API_VERSION=$(echo "$OLD_API_VERSION_VALUE" | sed 's/[{}]//g')
             newVersion=$(echo "$OLD_API_VERSION + 0.1" | bc)
             gsed -i 's/^API_VERSION=.*/API_VERSION={{'$newVersion'}}/' .env
             echo "Automatically tagged the API_VERSION TO VERSION $newVersion" 
@@ -38,7 +38,6 @@ fi
 }
 test -e .env
 status=$?
-echo $status
 if [ "$status" -ne 0 ]
 then
   echo "Env File does not exist"
